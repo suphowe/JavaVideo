@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<video style="margin: auto"></video>
+<body>
+
+</body>
+<script>
+    navigator.mediaDevices.getUserMedia({audio: true, video: true})
+        .then((devices) => {
+            const video = document.querySelector('video');
+            video.srcObject = devices;
+
+            video.onloadedmetadata = function (e) {
+                video.play();
+            };
+        })
+
+</script>
+</html>
